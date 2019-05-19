@@ -1,0 +1,29 @@
+{% extends 'authenticate/register.html' %}
+{% block content %}
+
+<!-- Start Sign In Form -->
+<script>
+    window.name = "{{name}}";
+    window.key_host = "{% url 'key' name %}";
+    window.home_host = "{% url 'manage' name %}";
+</script>
+<form action="#" class="fh5co-form animate-box" data-animate-effect="fadeInRight">
+    {% csrf_token %}
+    <h2>Authentication</h2>
+    <div class="form-group" id="prompt">
+        <div class='alert alert-success' role='alert'>您在这台设备上是第一次登录，请输入在CA注册的邮箱与密码，以便进行身份验证，验证仅此一次</div>
+    </div>
+    <div class="form-group">
+        <label for="email" class="sr-only">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Email" autocomplete="off">
+    </div>
+    <div class="form-group">
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password" autocomplete="off">
+    </div>
+    <div class="form-group" style="text-align:center;">
+        <input type="submit" value="Submit" class="btn btn-primary" onclick="get_privateByCA();">
+    </div>
+</form>
+<!-- END Sign In Form -->
+{% endblock %}

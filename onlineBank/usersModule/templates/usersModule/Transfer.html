@@ -1,0 +1,146 @@
+{% extends 'usersModule/manage.html' %}
+{% block content %}
+<script>
+    change("transfer");
+    window.private_host = "{% url 'key' name %}";
+    var key = localStorage.getItem(window.name);
+    if (key == null) {
+        window.location.href = window.private_host;
+    }
+   
+</script>
+<div id="page-wrapper">
+    <!--BEGIN TITLE & BREADCRUMB PAGE-->
+    <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+        <div class="page-header pull-left">
+            <div class="page-title">
+                转账</div>
+        </div>
+        <ol class="breadcrumb page-breadcrumb pull-right">
+            <li><i class="fa fa-home"></i>&nbsp;<a href="{% url 'manage' name %}">Home</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
+            <li class="hidden"><a href="#">转账</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
+            <li class="active">转账</li>
+        </ol>
+        <div class="clearfix">
+        </div>
+    </div>
+    <!--END TITLE & BREADCRUMB PAGE-->
+    <!--BEGIN CONTENT-->
+    <div class="page-content">
+        <div id="tab-general">
+            <div class="row mbl">
+                <div class="col-lg-12">
+
+                    <div class="col-md-12">
+                        <div id="area-chart-spline" style="width: 100%; height: 300px; display: none;">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-12">
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <div class="row mtl">
+                                <div class="col-md-9">
+                                    <div id="generalTabContent" class="tab-content">
+                                        <div id="tab-edit" class="tab-pane fade in active">
+                                            <form action="#" class="form-horizontal">
+                                                <div class="form-group" id="prompt">
+                                                    <div class='alert alert-success' role='alert'>Please enter the
+                                                        payment password, not the login password.</div>
+                                                </div>
+                                                <h3>Transferor</h3>
+
+                                                <div class="form-group"><label class="col-sm-3 control-label">Phone</label>
+
+                                                    <div class="col-sm-9 controls">
+                                                        <div class="row">
+                                                            <div class="col-xs-9"><input type="tel" id="phone"
+                                                                    placeholder="Length must be 11" class="form-control" /></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group"><label class="col-sm-3 control-label">Password</label>
+
+                                                    <div class="col-sm-9 controls">
+                                                        <div class="row">
+                                                            <div class="col-xs-9"><input type="password" id="passwd"
+                                                                    placeholder="password" class="form-control" /></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group"><label class="col-sm-3 control-label">Confirm
+                                                        Password</label>
+
+                                                    <div class="col-sm-9 controls">
+                                                        <div class="row">
+                                                            <div class="col-xs-9"><input type="password" id="retype"
+                                                                    placeholder="password" class="form-control" /></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr />
+                                                <h3>Beneficiary</h3>
+
+                                                <div class="form-group"><label class="col-sm-3 control-label">Mobile
+                                                        Phone</label>
+
+                                                    <div class="col-sm-9 controls">
+                                                        <div class="row">
+                                                            <div class="col-xs-9"><input type="text" id="b_phone"
+                                                                    placeholder="mobile phone" class="form-control" /></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group"><label class="col-sm-3 control-label">Amount</label>
+
+                                                    <div class="col-sm-9 controls">
+                                                        <div class="row">
+                                                            <div class="col-xs-9 input-group"><input type="text"
+                                                                    placeholder="amount" id="amount" class="form-control" /><span
+                                                                    class="input-group-addon">$</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr />
+                                                <button type="submit" class="btn btn-green btn-block" onclick="transfer();">Transfer</button>
+                                            </form>
+                                        </div>
+                                        <div class="mbxl"></div>
+                                        <h3>Dismissable alerts</h3>
+                                        <div class="alert alert-warning alert-dismissable">
+                                            <button type="button" data-dismiss="alert" aria-hidden="true" class="close">&times;</button>
+                                            <strong>Warning!</strong> After the
+                                            transfer is
+                                            confirmed, the funds will be transferred to the other party's
+                                            account.
+                                            Please operate with caution.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <!--END CONTENT-->
+    <!--BEGIN FOOTER-->
+    <div id="footer">
+        <div class="copyright">
+            <a href="#">2018 © Virtual Bank</a> 1160300103 高博为</div>
+    </div>
+    <!--END FOOTER-->
+</div>
+<!--END PAGE WRAPPER-->
+{% endblock %}

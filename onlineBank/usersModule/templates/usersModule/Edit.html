@@ -1,0 +1,108 @@
+{% extends 'usersModule/manage.html' %}
+{% block content %}
+<script>change("edit");</script>
+<div id="page-wrapper">
+    <!--BEGIN TITLE & BREADCRUMB PAGE-->
+    <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+        <div class="page-header pull-left">
+            <div class="page-title">
+                修改个人信息</div>
+        </div>
+        <ol class="breadcrumb page-breadcrumb pull-right">
+            <li><i class="fa fa-home"></i>&nbsp;<a href="{% url 'manage' name %}">Home</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
+            <li class="hidden"><a href="#">Edit</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
+            <li class="active">Edit</li>
+        </ol>
+        <div class="clearfix">
+        </div>
+    </div>
+    <!--END TITLE & BREADCRUMB PAGE-->
+    <!--BEGIN CONTENT-->
+    <div class="page-content">
+        <div id="tab-general">
+            <div class="row mbl">
+                <div class="col-lg-12">
+                    <div class="col-md-12">
+                        <div id="area-chart-spline" style="width: 100%; height: 300px; display: none;">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="panel panel-green" style="width: 760px;">
+                            <div class="panel-heading">
+                                Contacts Form</div>
+                            <div class="panel-body pan">
+                                <form action="#">
+                                    <div class="form-body pal">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="inputName" class="control-label">
+                                                        Name</label>
+                                                    <div class="input-icon right">
+                                                        <i class="fa fa-user"></i>
+                                                        <input id="name" type="text" placeholder="" class="form-control" /></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="inputEmail" class="control-label">
+                                                        Pay password</label>
+                                                    <div class="input-icon right">
+                                                        <i class="fa fa-lock"></i>
+                                                        <input id="ppasswd" type="password" placeholder="" class="form-control" /></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputSubject" class="control-label">
+                                                Card</label>
+                                            <div class="input-icon right">
+                                                <i class="fa fa-tag"></i>
+                                                <input id="card" type="text" placeholder="" class="form-control" /></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputSubject" class="control-label">
+                                                Phone</label>
+                                            <div class="input-icon right">
+                                                <i class="fa fa-phone"></i>
+                                                <input id="phone" type="tel" placeholder="" class="form-control" /></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputSubject" class="control-label">
+                                                New Password</label>
+                                            <div class="input-icon right">
+                                                <i class="fa fa-lock"></i>
+                                                <input id="passwd" type="password" placeholder="" class="form-control" /></div>
+                                        </div>
+                                        <div class="form-group mbn">
+                                            <label for="inputSubject" class="control-label">
+                                                Old Password(Required)</label>
+                                            <div class="input-icon right">
+                                                <i class="fa fa-lock"></i>
+                                                <input id="opasswd" type="password" placeholder="" class="form-control" /></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions text-center pal">
+                                        <button type="submit" class="btn btn-primary" onclick="edit();">
+                                            Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--END CONTENT-->
+    <!--BEGIN FOOTER-->
+    <div id="footer">
+        <div class="copyright">
+            <a href="#">2018 © Virtual Bank</a> 1160300103 高博为</div>
+    </div>
+    <!--END FOOTER-->
+</div>
+<!--END PAGE WRAPPER-->
+{% endblock %}

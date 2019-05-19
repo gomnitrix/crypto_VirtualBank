@@ -1,0 +1,22 @@
+{% extends 'authenticate/register.html' %}
+{% block content %}
+<!-- Start Sign In Form -->
+<form action="#" class="fh5co-form animate-box" data-animate-effect="fadeInRight">
+    <div class="form-group" id="prompt">
+        <div class='alert alert-success' role='alert'>You are logging in for the first time, please set up an 8-digit
+            payment password.</div>
+    </div>
+    <div class="form-group">
+        <label for="password" class="sr-only">Pay Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password" autocomplete="off">
+    </div>
+    <div class="form-group">
+        <label for="re-password" class="sr-only">Re-type Password</label>
+        <input type="password" class="form-control" id="re-password" placeholder="Re-type Password" autocomplete="off">
+    </div>
+    <div class="form-group" style="text-align:center;">
+        <input type="submit" value="submit" class="btn btn-primary" onclick="setpay();">
+    </div>
+</form>
+<!-- END Sign In Form -->
+{% endblock %}

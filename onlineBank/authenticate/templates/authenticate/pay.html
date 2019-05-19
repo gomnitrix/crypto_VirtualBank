@@ -1,0 +1,33 @@
+{% extends 'authenticate/register.html' %}
+{% block content %}
+
+<!-- Start Sign In Form -->
+<script>
+    window.pay_id = "{{id}}";
+    window.pay_host = "{% url 'pay' id %}";
+</script>
+<form action="#" class="fh5co-form animate-box" data-animate-effect="fadeIn">
+    {% csrf_token %}
+    <div class="text-center mbl"><img src="{{ MEDIA_URL }}{{ image }}" alt="" class="img-responsive" height="48" width="48"
+            style="margin: 0 auto;" /></div>
+    <h2 style="text-align:center;">Pay <strong id="amount">{{amount}}</strong>$ to {{name}}</h2>
+    <div class="form-group" id="prompt">
+    </div>
+    <div class="form-group">
+        <label for="phone" class="sr-only">Phone</label>
+        <input type="tel" class="form-control" id="phone" placeholder="Phone" autocomplete="off">
+    </div>
+    <div class="form-group">
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Pay Password" autocomplete="off">
+    </div>
+    <div class="form-group" style="text-align:center;">
+        <p>Not registered? <a href="{% url 'register' %}">Sign Up</a>
+        </p>
+    </div>
+    <div class="form-group" style="text-align:center;">
+        <input type="submit" value="Submit" class="btn btn-primary" onclick="pay();">
+    </div>
+</form>
+<!-- END Sign In Form -->
+{% endblock %}
